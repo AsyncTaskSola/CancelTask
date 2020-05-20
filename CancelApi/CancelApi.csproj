@@ -9,7 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Config\log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Config\log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="logs\" />
   </ItemGroup>
 
 

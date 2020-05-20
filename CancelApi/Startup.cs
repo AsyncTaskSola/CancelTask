@@ -6,9 +6,15 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
+using log4net;
+using log4net.Config;
+using log4net.Repository;
 
 namespace CancelApi
 {
+    /// <summary>
+    /// 启动文件
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -18,10 +24,16 @@ namespace CancelApi
 
         public IConfiguration Configuration { get; }
 
-
+        public static ILoggerRepository Repository { get; set; }
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            #region netcore log4 全局配置
+            Repository = LogManager.CreateRepository("CanApiLog 日记记录");
+            XmlConfigurator.Configure(Repository, new FileInfo("Config/log4net.config"));//配置文件路径可以自定义
+            BasicConfigurator.Configure(Repository);//控制台
+            #endregion
 
             #region swagger service
             //项目根目录
@@ -38,7 +50,7 @@ namespace CancelApi
                     License = new OpenApiLicense
                     {
                         Name = "Git AsyncTask(Evan)",
-                        Url = new Uri("https://github.com/AsyncTaskSola/DownLoadHaoKanVideoApi.git"),
+                        Url = new Uri("https://github.com/AsyncTaskSola/CancelTask.git"),
                     },
                     Contact = new OpenApiContact
                     {

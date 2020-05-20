@@ -25,6 +25,12 @@
             <param name="Cancel">默认为null,传入参数【取消】  “暂停择取当前数字”</param>
             <returns></returns>
         </member>
+        <member name="M:CancelApi.Controllers.CancelController.DeleteLogFile">
+            <summary>
+            删除日志
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:CancelApi.ResultType">
             <summary>
             静态类返回类型
@@ -79,6 +85,11 @@
         <member name="P:CancelApi.ResultModel`1.Error">
             <summary>
             错误对象
+            </summary>
+        </member>
+        <member name="T:CancelApi.Startup">
+            <summary>
+            启动文件
             </summary>
         </member>
     </members>

@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using log4net;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
 
 //---------------注意事项-----------------
 //api/[controller]/[action] 这里只要写明白【httpGet】这些请求就行了
 //api/[controller] 这里要写明[HttpGet("GetResult")] 只能在同等请求类型相互跳转
 //---------------注意事项-----------------
+
+
 namespace CancelApi.Controllers
 {
     /// <summary>
@@ -18,10 +23,16 @@ namespace CancelApi.Controllers
     [Route("api/[controller]")]
     public class CancelController : ControllerBase
     {
+        private static ILog log = LogManager.GetLogger(Startup.Repository.Name, "WeatherForecastController");
         private readonly ILogger<CancelController> _logger;
         RunTask t = new RunTask();
-        //static int VI = 0;
         static Entity entity = new Entity();
+
+        public CancelController(ILogger<CancelController> logger)
+        {
+            _logger = logger;
+        }
+
 
         /// <summary>
         /// 0 不进行跳转控制器 
@@ -30,12 +41,22 @@ namespace CancelApi.Controllers
         /// <param name="number"></param>
         /// <returns></returns>
         [HttpGet("GetResult")]
-        public ActionResult<object> GetResult(int number=0)
+        public ActionResult<object> GetResult(int number = 0)
         {
-            if (number == 1)
+            try
             {
-                return RedirectToAction("GetNumberSum", "Cancel"); 
-                //return Redirect("/api/Cancel/NumberSum");
+                //_logger.LogInformation("CancelController:GetResult");
+                log.Info("程序入口");
+                log.Info("CancelController:GetResult");
+                if (number == 1)
+                {
+                    return RedirectToAction("GetNumberSum", "Cancel");
+                    //return Redirect("/api/Cancel/NumberSum");
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError($"{e}");
             }
             return "不进行跳转控制器";
         }
@@ -47,10 +68,29 @@ namespace CancelApi.Controllers
         /// <param name="Cancel">默认为null,传入参数【取消】  “暂停择取当前数字”</param>
         /// <returns></returns>
         [HttpGet("NumberSum")]
-        public ActionResult<object> GetNumberSum(int lastnumber=0,string Cancel = null)
+        public ActionResult<object> GetNumberSum(int lastnumber = 0, string Cancel = null)
         {
-            var result = t.Sum(lastnumber,Cancel);
+            log.Info("CancelController:GetNumberSum");
+            var result = t.Sum(lastnumber, Cancel);
             return result;
+        }
+
+        /// <summary>
+        /// 删除日志
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("DeleteLogFile")]
+        public Task<ResultModel<string>> DeleteLogFile()
+        {
+            var result =Directory.GetCurrentDirectory() + $@"\logs\{DateTime.Now.ToString("yyyyMMdd")}.log";
+            if (System.IO.File.Exists(result))
+            {
+                System.IO.File.Delete(result);
+                //log.Info("路径存在，删除成功");
+                return Task.Run(() =>  new ResultModel<string> {State = ResultType.Success, Message = "删除成功"});
+            }
+
+            return Task.Run(() => new ResultModel<string> {State = ResultType.Error, Message = "删除失败"});
         }
 
         public class RunTask
@@ -64,20 +104,18 @@ namespace CancelApi.Controllers
                 try
                 {
                     List<Task> List = new List<Task>();
-                    if (lastnumber>0)
+                    if (lastnumber > 0)
                     {
                         entity.LastNumber = lastnumber;
                         instance = null;
                     }
-                   
+
                     if (instance == null)
                     {
-
                         CancellationTokenSource cancel = new CancellationTokenSource();
                         CancellationToken cts;
                         instance = new RunTask();
                         var o = new object();
-                        //var tag = entity.Tag = 0;
                         var tag = entity.LastNumber;
                         var count = 0;
                         var max = int.MaxValue;
@@ -108,8 +146,9 @@ namespace CancelApi.Controllers
                                         currentTag = tag;
                                         // Thread.Sleep(300);
                                         entity.Sum = currentTag;
-                                        Console.WriteLine($"当前值{currentTag}");
-                                        
+                                        log.Info($"当前值{currentTag}");
+                                        //Console.WriteLine($"当前值{currentTag}");
+
                                     }
                                 }
                             }, cts);
@@ -168,8 +207,8 @@ namespace CancelApi.Controllers
                         entity.Cts.Register(() =>
                         {
                             //不返回了，直接实体赋值
-
-                            Console.WriteLine($"Canceled 当前值为{entity.Sum}");
+                            log.Info($"Canceled 当前值为{entity.Sum}");
+                            //Console.WriteLine($"Canceled 当前值为{entity.Sum}");
                         });
                         //System.Environment.Exit(0); 全部线程退出
                     }

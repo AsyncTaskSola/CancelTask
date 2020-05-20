@@ -42,8 +42,8 @@ namespace CancelApi
     /// 通过消息返回类型
     /// </summary>
     /// <typeparam name="T">返回数据类型</typeparam>
-    public class ResultModel<T>:ControllerBase
-    {
+    public class ResultModel<T>
+    { 
         /// <summary>
         /// 状态
         /// </summary>
