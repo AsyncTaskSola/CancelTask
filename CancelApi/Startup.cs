@@ -36,10 +36,13 @@ namespace CancelApi
             #endregion
 
             #region swagger service
-            //项目根目录
-            var basePath = Directory.GetCurrentDirectory();
-            //使用项目内容的XML解析，需要通过项目生成 
-            var filePath = Path.Combine(basePath, "CancelApi.xml");
+            ////项目根目录
+            //var basePath = Directory.GetCurrentDirectory();
+            ////使用项目内容的XML解析，需要通过项目生成 
+            //var filePath = Path.Combine(basePath, "CancelApi.xml");
+            var baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            var xmlFile = AppDomain.CurrentDomain.FriendlyName + ".xml";
+            var xmlPath = Path.Combine(baseDirectory, xmlFile);
             services.AddSwaggerGen(option =>
             {
                 option.SwaggerDoc("CancelNumber", new OpenApiInfo
@@ -62,7 +65,7 @@ namespace CancelApi
 
                 //加载XML注释文档
                 // 第二参数includeControllerXmlComments 为true时控制器显示中文注释
-                option.IncludeXmlComments(filePath, true);
+                option.IncludeXmlComments(xmlPath, true);
                 //可添加多份XML翻译档案 ，项目分布类所需要
                 //option.IncludeXmlComments(Path.Combine(basePath, "DownLoadHaoKanVideoAPI.xml"), true);
                 // include document file

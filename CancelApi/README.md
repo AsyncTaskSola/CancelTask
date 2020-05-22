@@ -14,9 +14,10 @@
 * 采用线程的数据择取，恢复继续进行。若你还不懂线程请另转教程
 * 本次主要采用CancellationTokenSource 根据Token值来控制线程问题
 * 使用单例模式，lock锁定线程
+* 使用log4日志记录
 
 ## 一、安装
-你在此之前必须具备.netcore 3.1环境，Nuget: Swashbuckle.AspNetCore
+你在此之前必须具备.netcore 3.1环境，Nuget: Swashbuckle.AspNetCore ,log4netcore
 
 ## 二、使用
 * GetResult   0 不进行跳转控制器 ， 1 跳转到GetNumberSum 并自动运行 并0时候自动跳转到下一操作并自动计时开始
