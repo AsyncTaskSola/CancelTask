@@ -50,7 +50,7 @@ docker logs 容器名 -f 查看启动日志
 ```
 * 程序启动成功
 * ![powershell](https://github.com/AsyncTaskSola/CancelTask/tree/master/CancelApi/MarkdownPicture/picture1)
-* ![powershell](https://github.com/AsyncTaskSola/CancelTask/tree/master/CancelApi/MarkdownPicture/picture2) 
+* ![启动页面显示](https://github.com/AsyncTaskSola/CancelTask/tree/master/CancelApi/MarkdownPicture/picture2) 
 ## 四.联系方式
 * 作者：删库跑路
 * Wechat：Atlantis314 欢迎提wiki  
