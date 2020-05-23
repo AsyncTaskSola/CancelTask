@@ -49,7 +49,7 @@ docker logs 容器名 -f 查看启动日志
 ]
 ```
 * 程序启动成功
- > ![avatar](https://github.com/AsyncTaskSola/CancelTask/tree/master/CancelApi/MarkdownPicture/picture)
+ > ![avatar](https://github.com/AsyncTaskSola/CancelTask/tree/master/CancelApi/MarkdownPicture/picture1.png)
 ## 四.联系方式
 * 作者：删库跑路
 * 最近新项目：https://github.com/AsyncTaskSola/HaoKanVideoDownLoad
