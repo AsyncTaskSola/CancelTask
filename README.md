@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/AsyncTaskSola/CancelTask)](https://github.com/AsyncTaskSola/CancelTask/stargazers)
 [![GitHub license](https://img.shields.io/github/license/AsyncTaskSola/CancelTask)](https://github.com/AsyncTaskSola/CancelTask)    	
 [![Twitter](https://img.shields.io/twitter/url?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FAsyncTaskSola%2FCancelTask)
-### 为什么要有这个项目：吐槽 现在网上能搜到的都是 多线程用在winfrom,wpf的列子太多了，加上很多形成了默认的内部委托，事件调用，很少有详细的列子写到控制台，并用上最新的技术点。有没有一个新技术点的集合，看起来很死板 该项目只是一个简单的技术点结合，为新视频下载开源做铺垫
+### 为什么要有这个项目：吐槽 现在网上能搜到的都是 多线程用在winfrom,wpf的列子太多了，加上很多形成了默认的内部委托，事件调用，很少有详细的列子写到控制台，并用上最新的技术点。又没有一个新技术点的集合，看起来很死板 该项目只是一个简单的技术点结合，为新视频下载开源做铺垫
 
 ----------
 ----------
@@ -52,5 +52,4 @@ docker logs 容器名 -f 查看启动日志
  
 ## 四.联系方式
 * 作者：删库跑路
-* 最近新项目：https://github.com/AsyncTaskSola/HaoKanVideoDownLoad
 * Wechat：Atlantis314 欢迎提wiki  
