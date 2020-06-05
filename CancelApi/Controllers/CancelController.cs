@@ -50,8 +50,8 @@ namespace CancelApi.Controllers
                 log.Info("CancelController:GetResult");
                 if (number == 1)
                 {
-                    return RedirectToAction("GetNumberSum", "Cancel");
-                    //return Redirect("/api/Cancel/NumberSum");
+                    //return RedirectToAction("GetNumberSum", "Cancel");
+                    return Redirect("/api/Cancel/NumberSum");
                 }
             }
             catch (Exception e)
@@ -67,8 +67,8 @@ namespace CancelApi.Controllers
         /// <param name="lastnumber">上次择取数字</param>
         /// <param name="Cancel">默认为null,传入参数【取消】  “暂停择取当前数字”</param>
         /// <returns></returns>
-        [HttpPost("NumberSum")]
-        public ActionResult<object> GetNumberSum(int lastnumber = 0, string Cancel = null)
+        [HttpGet("NumberSum")]
+        public ActionResult<object> GetNumberSum(int lastnumber = 0,string Cancel = null)
         {
             log.Info("CancelController:GetNumberSum");
             var result = t.Sum(lastnumber, Cancel);
@@ -92,6 +92,18 @@ namespace CancelApi.Controllers
 
             return Task.Run(() => new ResultModel<string> {State = ResultType.Error, Message = "删除失败"});
         }
+
+        /// <summary>
+        /// 这个接口只是用作测试post的，前端用来传值练习的
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public  Task<ResultModel<string>> TestPost([FromQuery] string value)
+        {
+            return Task.Run(() => new ResultModel<string> {Data = value+"只是post测试啦",State = ResultType.Error, Message = "请求成功" });
+        }
+
 
         public class RunTask
         {
