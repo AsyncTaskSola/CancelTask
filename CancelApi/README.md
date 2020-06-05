@@ -1,56 +1,58 @@
 # CancelApi
-### ¶àÏß³ÌÔñÈ¡Êı¾İ
+### å¤šçº¿ç¨‹æ‹©å–æ•°æ®
 [![GitHub issues](https://img.shields.io/github/issues/AsyncTaskSola/CancelTask)](https://github.com/AsyncTaskSola/CancelTask/issues)
 [![GitHub forks](https://img.shields.io/github/forks/AsyncTaskSola/CancelTask)](https://github.com/AsyncTaskSola/CancelTask/network)
 [![GitHub stars](https://img.shields.io/github/stars/AsyncTaskSola/CancelTask)](https://github.com/AsyncTaskSola/CancelTask/stargazers)
 [![GitHub license](https://img.shields.io/github/license/AsyncTaskSola/CancelTask)](https://github.com/AsyncTaskSola/CancelTask)    	
 [![Twitter](https://img.shields.io/twitter/url?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FAsyncTaskSola%2FCancelTask)
-### ÎªÊ²Ã´ÒªÓĞÕâ¸öÏîÄ¿£ºÍÂ²Û ÏÖÔÚÍøÉÏÄÜËÑµ½µÄ¶¼ÊÇ ¶àÏß³ÌÓÃÔÚwinfrom,wpfµÄÁĞ×ÓÌ«¶àÁË£¬¼ÓÉÏºÜ¶àĞÎ³ÉÁËÄ¬ÈÏµÄÄÚ²¿Î¯ÍĞ£¬ÊÂ¼şµ÷ÓÃ£¬ºÜÉÙÓĞÏêÏ¸µÄÁĞ×ÓĞ´µ½¿ØÖÆÌ¨£¬²¢ÓÃÉÏ×îĞÂµÄ¼¼Êõµã¡£ÓĞÃ»ÓĞÒ»¸öĞÂ¼¼ÊõµãµÄ¼¯ºÏ£¬¿´ÆğÀ´ºÜËÀ°å ¸ÃÏîÄ¿Ö»ÊÇÒ»¸ö¼òµ¥µÄ¼¼Êõµã½áºÏ£¬ÎªĞÂÊÓÆµÏÂÔØ¿ªÔ´×öÆÌµæ
+### ä¸ºä»€ä¹ˆè¦æœ‰è¿™ä¸ªé¡¹ç›®ï¼šåæ§½ ç°åœ¨ç½‘ä¸Šèƒ½æœåˆ°çš„éƒ½æ˜¯ å¤šçº¿ç¨‹ç”¨åœ¨winfrom,wpfçš„åˆ—å­å¤ªå¤šäº†ï¼ŒåŠ ä¸Šå¾ˆå¤šå½¢æˆäº†é»˜è®¤çš„å†…éƒ¨å§”æ‰˜ï¼Œäº‹ä»¶è°ƒç”¨ï¼Œå¾ˆå°‘æœ‰è¯¦ç»†çš„åˆ—å­å†™åˆ°æ§åˆ¶å°ï¼Œå¹¶ç”¨ä¸Šæœ€æ–°çš„æŠ€æœ¯ç‚¹ã€‚æœ‰æ²¡æœ‰ä¸€ä¸ªæ–°æŠ€æœ¯ç‚¹çš„é›†åˆï¼Œçœ‹èµ·æ¥å¾ˆæ­»æ¿ è¯¥é¡¹ç›®åªæ˜¯ä¸€ä¸ªç®€å•çš„æŠ€æœ¯ç‚¹ç»“åˆï¼Œä¸ºæ–°è§†é¢‘ä¸‹è½½å¼€æºåšé“ºå«
 
 ----------
 ----------
 
-## ÌØµã
-* ²ÉÓÃ.ntf4.0µÄtaskÓï·¨ÌÇĞ´·¨£¬±ÈÆğÍøÉÏºÜ¶àÕÒµ½µÄthreadĞ´·¨¼ò±ã
-* ²ÉÓÃswaggerÀ´ÅäÖÃ Swagger ¿ÉÒÔ¹á´©ÓÚÕû¸ö API ÉúÌ¬£¬Èç API µÄÉè¼Æ¡¢±àĞ´ API ÎÄµµ¡¢²âÊÔºÍ²¿Êğ¡££¨Ğ¡ĞÍÏîÄ¿²»ÊµÏÖREST/RESTful·ç¸ñ£©ÈôÒªÊµÏÖÇë
-  ×ªµ½×îĞÂÊÓÆµÏÂÔØ¿ªÔ´
-* ²ÉÓÃÏß³ÌµÄÊı¾İÔñÈ¡£¬»Ö¸´¼ÌĞø½øĞĞ¡£ÈôÄã»¹²»¶®Ïß³ÌÇëÁí×ª½Ì³Ì
-* ±¾´ÎÖ÷Òª²ÉÓÃCancellationTokenSource ¸ù¾İTokenÖµÀ´¿ØÖÆÏß³ÌÎÊÌâ
-* Ê¹ÓÃµ¥ÀıÄ£Ê½£¬lockËø¶¨Ïß³Ì
-* Ê¹ÓÃlog4ÈÕÖ¾¼ÇÂ¼
-* Ìí¼Ódocker²¿Êğ
+## ç‰¹ç‚¹
+* é‡‡ç”¨.ntf4.0çš„taskè¯­æ³•ç³–å†™æ³•ï¼Œæ¯”èµ·ç½‘ä¸Šå¾ˆå¤šæ‰¾åˆ°çš„threadå†™æ³•ç®€ä¾¿
+* é‡‡ç”¨swaggeræ¥é…ç½® Swagger å¯ä»¥è´¯ç©¿äºæ•´ä¸ª API ç”Ÿæ€ï¼Œå¦‚ API çš„è®¾è®¡ã€ç¼–å†™ API æ–‡æ¡£ã€æµ‹è¯•å’Œéƒ¨ç½²ã€‚ï¼ˆå°å‹é¡¹ç›®ä¸å®ç°REST/RESTfulé£æ ¼ï¼‰è‹¥è¦å®ç°è¯·
+  è½¬åˆ°æœ€æ–°è§†é¢‘ä¸‹è½½å¼€æº
+* é‡‡ç”¨çº¿ç¨‹çš„æ•°æ®æ‹©å–ï¼Œæ¢å¤ç»§ç»­è¿›è¡Œã€‚è‹¥ä½ è¿˜ä¸æ‡‚çº¿ç¨‹è¯·å¦è½¬æ•™ç¨‹
+* æœ¬æ¬¡ä¸»è¦é‡‡ç”¨CancellationTokenSource æ ¹æ®Tokenå€¼æ¥æ§åˆ¶çº¿ç¨‹é—®é¢˜
+* ä½¿ç”¨å•ä¾‹æ¨¡å¼ï¼Œlocké”å®šçº¿ç¨‹
+* ä½¿ç”¨log4æ—¥å¿—è®°å½•
+* æ·»åŠ dockeréƒ¨ç½²
 
-## Ò»¡¢°²×°
-* ÄãÔÚ´ËÖ®Ç°±ØĞë¾ß±¸.netcore 3.1£¬git,docker»·¾³
+## ä¸€ã€å®‰è£…
+* ä½ åœ¨æ­¤ä¹‹å‰å¿…é¡»å…·å¤‡.netcore 3.1ï¼Œgit,dockerç¯å¢ƒ
 * Nuget: Swashbuckle.AspNetCore ,log4netcore
-* dockerÄã¿ÉÒÔÊ¹ÓÃpc win10×¨Òµ°æHyper-V,linux°æ 
-* docker ¾µÏñµØÖ· https://hub.docker.com/r/hexsola/cancelapiswagger  Ä¬ÈÏ·¢²¼ÎªLinux64
-* À­È¡docker¾µÏñ docker pull hexsola/cancelapiswagger
+* dockerä½ å¯ä»¥ä½¿ç”¨pc win10ä¸“ä¸šç‰ˆHyper-V,linuxç‰ˆ 
+* docker é•œåƒåœ°å€ https://hub.docker.com/r/hexsola/cancelapiswagger  é»˜è®¤å‘å¸ƒä¸ºLinux64
+* æ‹‰å–dockeré•œåƒ docker pull hexsola/cancelapiswagger
 
-## ¶ş¡¢×¢Òâ
-* dockerfile Â·¾¶±ØĞë·Åµ½ºÍslnµÄÒ»¸öÄ¿Â¼ÏÂÃæ
-* dockerfile vs×Ô¶¯Éú³ÉµÄÊ±ºòÄ¬ÈÏÊÇreleaseÂ·¾¶£¬ÕâÀïÓÃµ½swaggerµÄĞ¡»ï°éÃÇĞèÒª°ÑÅäÖÃÉèÖÃºÍdebugµÄÒ»Ñù£¬²»È»Éú³É¾µÏñµÄÊ±ºò´ø²»ÉÏ.xmlÎÄ¼ş
-* ³ÌĞò¶Ë¿ÚÄ¬ÈÏÊÇ5000£¬dockerÆô¶¯µÄÊ±ºò±ØĞë¶Ë¿ÚÓ³Éäµ½5000
-* docker ÃüÁî²Î¿¼ https://docs.docker.com/get-started/
+## äºŒã€æ³¨æ„
+* dockerfile è·¯å¾„å¿…é¡»æ”¾åˆ°å’Œslnçš„ä¸€ä¸ªç›®å½•ä¸‹é¢
+* dockerfile vsè‡ªåŠ¨ç”Ÿæˆçš„æ—¶å€™é»˜è®¤æ˜¯releaseè·¯å¾„ï¼Œè¿™é‡Œç”¨åˆ°swaggerçš„å°ä¼™ä¼´ä»¬éœ€è¦æŠŠé…ç½®è®¾ç½®å’Œdebugçš„ä¸€æ ·ï¼Œä¸ç„¶ç”Ÿæˆé•œåƒçš„æ—¶å€™å¸¦ä¸ä¸Š.xmlæ–‡ä»¶
+* ç¨‹åºç«¯å£é»˜è®¤æ˜¯5000ï¼Œdockerå¯åŠ¨çš„æ—¶å€™å¿…é¡»ç«¯å£æ˜ å°„åˆ°5000
+* docker å‘½ä»¤å‚è€ƒ https://docs.docker.com/get-started/
 
-## Èı¡¢Ê¹ÓÃ
-* ³ÌĞò
-  * GetResult   0 ²»½øĞĞÌø×ª¿ØÖÆÆ÷ £¬ 1 Ìø×ªµ½GetNumberSum ²¢×Ô¶¯ÔËĞĞ ²¢0Ê±ºò×Ô¶¯Ìø×ªµ½ÏÂÒ»²Ù×÷²¢×Ô¶¯¼ÆÊ±¿ªÊ¼
-    * GetNumberSum ÊäÈë²ÎÊı È¡Ïû ¿ÉÒÔ½ØÈ¡µ±Ç°Êı¾İ
-      * DeleteLogFile É¾³ıÈÕÖ¾¶øÓÃ
+## ä¸‰ã€ä½¿ç”¨
+* ç¨‹åº
+  * GetResult   0 ä¸è¿›è¡Œè·³è½¬æ§åˆ¶å™¨ ï¼Œ 1 è·³è½¬åˆ°GetNumberSum å¹¶è‡ªåŠ¨è¿è¡Œ å¹¶0æ—¶å€™è‡ªåŠ¨è·³è½¬åˆ°ä¸‹ä¸€æ“ä½œå¹¶è‡ªåŠ¨è®¡æ—¶å¼€å§‹
+    * GetNumberSum è¾“å…¥å‚æ•° å–æ¶ˆ å¯ä»¥æˆªå–å½“å‰æ•°æ®
+      * DeleteLogFile åˆ é™¤æ—¥å¿—è€Œç”¨
 
 * Docker
- ÈôÓÃµ½dockerµÄÃüÁî²Î¿¼
+ è‹¥ç”¨åˆ°dockerçš„å‘½ä»¤å‚è€ƒ
 ```
 [
-docker run --name cancelapiswagger -d -p 8080:5000 hexsola/cancelapiswagger ÔËĞĞ¾µÏñ
-docker exec -it ÈİÆ÷Ãû /bin/sh ²é¿´·¢²¼µÄ¾µÏñÎÄ¼ş
-docker logs ÈİÆ÷Ãû -f ²é¿´Æô¶¯ÈÕÖ¾
+docker run --name cancelapiswagger -d -p 8080:5000 hexsola/cancelapiswagger è¿è¡Œé•œåƒ
+docker exec -it å®¹å™¨å /bin/sh æŸ¥çœ‹å‘å¸ƒçš„é•œåƒæ–‡ä»¶
+docker logs å®¹å™¨å -f æŸ¥çœ‹å¯åŠ¨æ—¥å¿—
 ]
 ```
-* ³ÌĞòÆô¶¯³É¹¦
- 
-## ËÄ.ÁªÏµ·½Ê½
-* ×÷Õß£ºÉ¾¿âÅÜÂ·
-* ×î½üĞÂÏîÄ¿£ºhttps://github.com/AsyncTaskSola/HaoKanVideoDownLoad
-* Wechat£ºAtlantis314 »¶Ó­Ìáwiki  
+* ç¨‹åºå¯åŠ¨æˆåŠŸ
+* ![ç¨‹åºpowershell](https://github.com/AsyncTaskSola/CancelTask/tree/master/CancelApi/MarkdownPicture/picture1.png)
+* ![å¯åŠ¨ç•Œé¢](https://github.com/AsyncTaskSola/CancelTask/tree/master/CancelApi/MarkdownPicture/picture2.png)
+
+## å››.è”ç³»æ–¹å¼
+* ä½œè€…ï¼šåˆ åº“è·‘è·¯
+* æœ€è¿‘æ–°é¡¹ç›®ï¼šhttps://github.com/AsyncTaskSola/HaoKanVideoDownLoad
+* Wechatï¼šAtlantis314 æ¬¢è¿æwiki  
