@@ -29,6 +29,18 @@ namespace CancelApi
         {
             services.AddControllers();
 
+            #region 跨域
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "Policy1",
+                    builder => {
+                        builder.WithOrigins("http://127.0.0.1:8081", "http://localhost:8081")    //这里实际是前端写的接口
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
+            #endregion
+
             #region netcore log4 全局配置
             Repository = LogManager.CreateRepository("CanApiLog 日记记录");
             XmlConfigurator.Configure(Repository, new FileInfo("Config/log4net.config"));//配置文件路径可以自定义
@@ -82,6 +94,17 @@ namespace CancelApi
             }
 
             app.UseRouting();
+
+            #region Cors
+            app.UseCors("Policy1");
+            //app.UseCors(option =>
+            //{
+            //    option.WithOrigins("http://127.0.0.1:8081", "http://localhost:8081")
+            //        .AllowAnyHeader()
+            //        .AllowCredentials() //允许cookies
+            //        .WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS");
+            //});
+            #endregion
 
             #region Swagger
             //Enable middleware to serve generated Swagger as a JSON endpoint.

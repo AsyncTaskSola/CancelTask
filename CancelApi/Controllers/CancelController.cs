@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection.Emit;
 using System.Threading;
 using System.Threading.Tasks;
 using log4net;
@@ -27,7 +28,6 @@ namespace CancelApi.Controllers
         private readonly ILogger<CancelController> _logger;
         RunTask t = new RunTask();
         static Entity entity = new Entity();
-
         public CancelController(ILogger<CancelController> logger)
         {
             _logger = logger;
@@ -67,7 +67,7 @@ namespace CancelApi.Controllers
         /// <param name="lastnumber">上次择取数字</param>
         /// <param name="Cancel">默认为null,传入参数【取消】  “暂停择取当前数字”</param>
         /// <returns></returns>
-        [HttpGet("NumberSum")]
+        [HttpPost("NumberSum")]
         public ActionResult<object> GetNumberSum(int lastnumber = 0, string Cancel = null)
         {
             log.Info("CancelController:GetNumberSum");
